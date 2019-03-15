@@ -1,19 +1,23 @@
-## 一開始先安裝pip 跟 virtualenv
+## 安裝 pip 跟 virtualenv
 sudo apt install python-pip  
 pip install --upgrade pip  
 pip install virtualenv  
 
-## 創資料夾放virtualenv的設定 (optional)
+## 建立 build folder  
 mkdir sonic-utilities.build  
 cd sonic-utilities.build  
 
-## 創造叫做venv的virtualenv, 並且不延用現在環境的套件(但還是會幫你裝pip等)
+## 複製 sonic-utilities / sonic-config-engine / sonic-py-swsssdk
+git clone https://github.com/Azure/sonic-buildimage.git
+cp -r sonic-buildimage/src/sonic-config-engine/ sonic-buildimage/src/sonic-py-swsssdk/ sonic-buildimage/src/sonic-utilities/ .  
+
+## 創造叫做 venv 的 virtualenv, 並且不延用現在環境的套件(但還是會幫你裝pip等)
 virtualenv --no-site-packages venv  
 
-## 啟動virtualenv, 要結束的話用deactivate
+## 啟動 virtualenv, 要結束的話用deactivate
 cd venv  
 source ./bin/activate  
-cd ../../  
+cd ../  
 
 ## 執行 python2 -m py.test –v 跑unit test, 中間看到缺甚麼套件就用pip 去裝
 ## 如果顯示找不到適合的版本, 可能是sonic自己的套件
