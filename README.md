@@ -8,7 +8,7 @@ mkdir sonic-utilities.build
 cd sonic-utilities.build  
 
 ## 複製 sonic-utilities / sonic-config-engine / sonic-py-swsssdk
-git clone https://github.com/Azure/sonic-buildimage.git
+git clone https://github.com/Azure/sonic-buildimage.git  
 cp -r sonic-buildimage/src/sonic-config-engine/ sonic-buildimage/src/sonic-py-swsssdk/ sonic-buildimage/src/sonic-utilities/ .  
 
 ## 創造叫做 venv 的 virtualenv, 並且不延用現在環境的套件(但還是會幫你裝pip等)
