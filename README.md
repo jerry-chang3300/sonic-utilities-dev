@@ -67,3 +67,10 @@ python setup.py install
 cd ../sonic-utilities/  
 python2 -m py.test –v  
 ```
+(現在的 source code 好像有點問題, 可能要暫時改成)
+```
+cd ../sonic-utilities/sonic-utilities-tests
+python acl_loader_test.py
+python port2alias_test.py
+```
+
