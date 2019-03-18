@@ -1,0 +1,9 @@
+[submodule "sonic-utilities"]
+	path = sonic-utilities
+	url = https://github.com/Azure/sonic-utilities.git
+[submodule "sonic-buildimage"]
+	path = sonic-buildimage
+	url = https://github.com/Azure/sonic-buildimage.git
+[submodule "sonic-py-swsssdk"]
+	path = sonic-py-swsssdk
+	url = https://github.com/Azure/sonic-py-swsssdk.git
