@@ -1,3 +1,8 @@
+# 簡介
+這個 project 是用來開發 sonic-utilities (CLI), 同時也包含了 sonic-config-engine (sonic-cfggen) 和 sonic-py-swsssdk (swsssdk) 的部分  
+
+
+# 安裝流程
 ## 安裝 pip 跟 virtualenv
 ```
 sudo apt install python-pip  
