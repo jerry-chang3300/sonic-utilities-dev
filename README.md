@@ -18,8 +18,10 @@ cd sonic-utilities.build
 
 ## 複製 sonic-utilities / sonic-config-engine / sonic-py-swsssdk
 ```
+git clone https://github.com/Azure/sonic-utilities.git
 git clone https://github.com/Azure/sonic-buildimage.git  
-cp -r sonic-buildimage/src/sonic-config-engine/ sonic-buildimage/src/sonic-py-swsssdk/ sonic-buildimage/src/sonic-utilities/ ./
+cp -r sonic-buildimage/src/sonic-config-engine/ ./
+git clone https://github.com/Azure/sonic-py-swsssdk.git
 ```
 
 ## 創造叫做 venv 的 virtualenv, 並且不延用現在環境的套件(但還是會幫你裝pip等)
@@ -38,13 +40,7 @@ cd ../
 ## 如果顯示找不到適合的版本, 可能是sonic自己的套件
 ### 顯示要pyangbind.lib.yangtypes, 但 pip 只有 pyangbind, 所以改裝 pyangbind
 ```
-pip install py  
-pip install pytest  
-pip install click  
-pip install ipaddr  
-pip install tabulate  
-pip install natsort  
-pip install pyangbind  
+pip install py pytest click ipaddr natsort tabulate pyangbind 
 ```
 
 ## 需要 openconfig_acl 和 portconfig, 這兩個套件在sonic-config-engine
@@ -59,7 +55,7 @@ easy_install sonic_config_engine-1.0-py2.7.egg
 
 ## 需要 swsssdk, 可以在sonic-py-swsssdk下安裝
 ```
-cd ../sonic-py-swsssdk/  
+cd ../../sonic-py-swsssdk/  
 python setup.py build  
 python setup.py install  
 ```
