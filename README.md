@@ -4,13 +4,6 @@
 
 
 # 安裝流程
-## 安裝 pip 跟 virtualenv
-```
-sudo apt install python-pip  
-pip install --upgrade pip  
-pip install virtualenv  
-```
-
 ## clone repository
 ```
 git clone https://github.com/jerry-chang3300/sonic-utilities-dev.git
@@ -21,7 +14,13 @@ git clone https://github.com/jerry-chang3300/sonic-utilities-dev.git
 cd sonic-utilities-dev/
 git submodule init
 git submodule update
+```
 
+## 安裝 pip 跟 virtualenv
+```
+sudo apt install python-pip  
+pip install --upgrade pip  
+pip install virtualenv  
 ```
 
 ## 創造 virtualenv
@@ -33,15 +32,12 @@ virtualenv --no-site-packages venv
 ## 啟動 virtualenv
 要結束的話用deactivate  
 ```
-cd venv  
-source ./bin/activate  
-cd ../  
+source ./venv/bin/activate  
 ```
 
 ## 安裝 python 套件
 顯示要pyangbind.lib.yangtypes, 但 pip 只有 pyangbind, 所以改裝 pyangbind
 ```
-~pip install py pytest click ipaddr natsort tabulate pyangbind~
 pip install -r requirements.txt
 ```
 
@@ -49,7 +45,7 @@ pip install -r requirements.txt
 需要 openconfig_acl 和 portconfig, 這兩個套件在sonic-config-engine  
 可能需要使用 sudo 以解決權限問題, 另外需要再透過 easy_install 來安裝(TODO?)  
 ```
-cd cd sonic-buildimage/src/sonic-config-engine/  
+cd sonic-buildimage/src/sonic-config-engine/  
 python setup.py build  
 sudo python setup.py install  
 cd dist  
