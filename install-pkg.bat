@@ -16,15 +16,17 @@ pip install -r requirements.txt
 git submodule init
 git submodule update
 
+pushd .
 cd sonic-buildimage\src\sonic-config-engine
 python setup.py build
 python setup.py install
-cd "%DIRNAME%"
+popd
 
+pushd .
 cd sonic-py-swsssdk
 python setup.py build
 python setup.py install
-cd "%DIRNAME%"
+popd
 
 @rem for openconfig_acl
 set PYTHONPATH=%cd%\tests;%cd%\sonic-buildimage\src\sonic-config-engine

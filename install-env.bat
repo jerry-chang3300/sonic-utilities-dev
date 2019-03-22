@@ -7,6 +7,12 @@ set APP_HOME=%DIRNAME%
 for /f %%i in ('scripts\ini.bat /i ENV_HOME .env') do set ENV_HOME=%%i
 
 mkdir %ENV_HOME%
+
+pushd .
+cd %ENV_HOME%
+set ENV_HOME=%cd%
+popd
+
 Powershell.exe -ExecutionPolicy Bypass -Command "(New-Object Net.WebClient).DownloadFile('https://dist.nuget.org/win-x86-commandline/latest/nuget.exe', '%ENV_HOME%\nuget.exe');"
 
 %ENV_HOME%\nuget.exe install python2 -DirectDownload -ExcludeVersion -OutputDirectory %ENV_HOME%
